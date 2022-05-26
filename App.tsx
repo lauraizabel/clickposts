@@ -1,4 +1,5 @@
-import { SafeAreaView, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import {
   useFonts,
   Roboto_400Regular,
@@ -11,7 +12,6 @@ import { ThemeProvider } from "styled-components";
 
 import Theme from "./src/theme";
 import Home from "./src/view/home/home";
-import SafeArea from "./src/components/safe-area/safe-area";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -26,19 +26,10 @@ export default function App() {
 
   return (
     <ThemeProvider theme={Theme}>
-      <SafeArea>
+      <SafeAreaView>
         <Home />
         <StatusBar style="auto" />
-      </SafeArea>
+      </SafeAreaView>
     </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
