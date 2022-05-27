@@ -19,8 +19,16 @@ export const SubText = styled.Text`
   margin-top: 10px;
 `;
 
-export const Content = styled.View`
+export const Content = styled.TouchableOpacity`
   padding: 10px;
   width: 90%;
   margin: 12px 0;
+  flex-direction: row;
+`;
+
+export const Texts = styled.View`
+  width: 70%;
+`;
+export const Buttons = styled.View`
+  width: 30%;
 `;

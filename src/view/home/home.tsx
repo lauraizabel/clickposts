@@ -6,13 +6,20 @@ import { Posts } from "../../@types/Posts";
 import { getPosts } from "../../api/posts/posts.api";
 
 import Layout from "../../components/layout/layout";
-import List from "../../components/list/list";
+import List from "../../components/card/card";
 import Button from "../../components/button/button";
 
 import { Container, ContainerButton } from "./home-styles";
 
 const Home: React.FC = () => {
-  const [posts, setPosts] = useState<Posts[]>([]);
+  const [posts, setPosts] = useState<Posts[]>([
+    {
+      id: 0,
+      title: "testing",
+      body: "placeholder body",
+      userId: 0,
+    },
+  ]);
 
   const navigation = useNavigation();
 
