@@ -16,7 +16,7 @@ const Button: React.FC<IButton> = ({
   title,
 }) => {
   return (
-    <ButtonComponent>
+    <ButtonComponent onPress={onPress}>
       <Text>{title}</Text>
     </ButtonComponent>
   );

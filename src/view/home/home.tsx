@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FlatList } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { Posts } from "../../@types/Posts";
 import { getPosts } from "../../api/posts/posts";
@@ -13,20 +14,26 @@ import { Container, ContainerButton } from "./home-styles";
 const Home: React.FC = () => {
   const [posts, setPosts] = useState<Posts[]>([]);
 
-  const fetchPosts = async () => {
-    const data = await getPosts();
-    setPosts(data);
-  };
+  const navigation = useNavigation();
 
   useEffect(() => {
     fetchPosts();
   }, []);
 
+  const fetchPosts = async () => {
+    const data = await getPosts();
+    setPosts(data);
+  };
+
+  const goToRegister = () => {
+    navigation.navigate("Register");
+  };
+
   return (
     <Layout>
       <Container>
         <ContainerButton>
-          <Button title="Adicionar Postagem" />
+          <Button title="Adicionar Postagem" onPress={goToRegister} />
         </ContainerButton>
       </Container>
       <FlatList

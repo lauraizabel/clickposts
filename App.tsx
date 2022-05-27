@@ -1,4 +1,3 @@
-import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
   useFonts,
@@ -11,7 +10,7 @@ import AppLoading from "expo-app-loading";
 import { ThemeProvider } from "styled-components";
 
 import Theme from "./src/theme";
-import Home from "./src/view/home/home";
+import Navigation from "./src/navigation/navigation";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -26,10 +25,8 @@ export default function App() {
 
   return (
     <ThemeProvider theme={Theme}>
-      <SafeAreaView>
-        <Home />
-        <StatusBar style="auto" />
-      </SafeAreaView>
+      <StatusBar style="auto" />
+      <Navigation />
     </ThemeProvider>
   );
 }
