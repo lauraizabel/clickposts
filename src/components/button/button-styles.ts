@@ -1,7 +1,12 @@
 import styled from "styled-components/native";
+import theme from "../../theme";
 
-export const Button = styled.TouchableOpacity`
-  background-color: ${({ theme }) => theme.colors.lightPurple};
+interface IButton {
+  color: string;
+}
+
+export const Button = styled.TouchableOpacity<IButton>`
+  background-color: ${({ color }) => color};
   width: 90%;
   height: 60px;
   border-radius: 10px;
@@ -15,3 +20,14 @@ export const Text = styled.Text`
   text-align: center;
   font-weight: bold;
 `;
+
+export const AndroidStyles = {
+  container: {
+    backgroundColor: theme.colors.lightPurple,
+    width: "90%",
+    height: "60px",
+    borderRadius: "10px",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+};

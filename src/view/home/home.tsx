@@ -3,7 +3,7 @@ import { FlatList } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { Posts } from "../../@types/Posts";
-import { getPosts } from "../../api/posts/posts";
+import { getPosts } from "../../api/posts/posts.api";
 
 import Layout from "../../components/layout/layout";
 import List from "../../components/list/list";

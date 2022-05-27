@@ -7,3 +7,9 @@ export const getPosts = async () => {
   const response: AxiosResponse<Posts[]> = await api.get("/posts");
   return response.data;
 };
+
+//save a new post
+export const savePost = async (post: Posts) => {
+  const response: AxiosResponse<Posts> = await api.post("/posts", post);
+  return response.data;
+};

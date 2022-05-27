@@ -5,7 +5,7 @@ export const Container = styled.View`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.darkBlue};
   width: 100%;
-  height: 90px;
+  height: 70px;
   box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);
 `;
 

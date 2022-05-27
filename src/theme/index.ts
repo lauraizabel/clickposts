@@ -6,6 +6,7 @@ export default {
     darkGreen: "#184D59",
     lightPurple: "#4B3A8C",
     darkBlue: "#21038C",
+    danger: "#FF0000",
   },
   fonts: {
     regular: "Roboto_400Regular",
