@@ -17,9 +17,10 @@ import {
 interface IList {
   data: ListRenderItemInfo<Post>;
   onClickEdit: (id: number) => void;
+  onClickShow: (id: number) => void;
 }
 
-const List: React.FC<IList> = ({ data, onClickEdit }) => {
+const List: React.FC<IList> = ({ data, onClickEdit, onClickShow }) => {
   const onCancel = () => {
     Alert.alert("Deletar", "Deseja apagar a postagem?", [
       {
@@ -41,7 +42,7 @@ const List: React.FC<IList> = ({ data, onClickEdit }) => {
 
   return (
     <Container>
-      <Content>
+      <Content onPress={() => onClickShow(Number(data.item.id))}>
         <Texts>
           <Title>{data.item.title}</Title>
           <SubText>{data.item.body}</SubText>

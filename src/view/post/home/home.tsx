@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FlatList } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import { Posts } from "../../../@types/Posts";
+import { Post } from "../../../@types/Posts";
 import { getPosts } from "../../../api/posts/posts.api";
 
 import Layout from "../../../components/layout/layout";
@@ -12,7 +12,7 @@ import Button from "../../../components/button/button";
 import { Container, ContainerButton } from "./home-styles";
 
 const Home: React.FC = () => {
-  const [posts, setPosts] = useState<Posts[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   const navigation = useNavigation();
 
@@ -33,6 +33,10 @@ const Home: React.FC = () => {
     navigation.navigate("Edit", { id });
   };
 
+  const goToShow = (id: number) => {
+    navigation.navigate("Show", { id });
+  };
+
   return (
     <Layout>
       <Container>
@@ -42,7 +46,9 @@ const Home: React.FC = () => {
       </Container>
       <FlatList
         data={posts}
-        renderItem={(item) => <List data={item} onClickEdit={goToEdit} />}
+        renderItem={(item) => (
+          <List data={item} onClickEdit={goToEdit} onClickShow={goToShow} />
+        )}
         keyExtractor={(item) => item.id.toString()}
       />
     </Layout>
