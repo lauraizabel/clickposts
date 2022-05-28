@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import Home from "../view/home/home";
 import Register from "../view/register/register";
+import Edit from "../view/edit/edit";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ const Navigation: React.FC = () => {
       >
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="Edit" component={Edit} />
       </Stack.Navigator>
     </NavigationContainer>
   );

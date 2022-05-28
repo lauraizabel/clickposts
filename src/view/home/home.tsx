@@ -12,19 +12,13 @@ import Button from "../../components/button/button";
 import { Container, ContainerButton } from "./home-styles";
 
 const Home: React.FC = () => {
-  const [posts, setPosts] = useState<Posts[]>([
-    {
-      id: 0,
-      title: "testing",
-      body: "placeholder body",
-      userId: 0,
-    },
-  ]);
+  const [posts, setPosts] = useState<Posts[]>([]);
 
   const navigation = useNavigation();
 
   useEffect(() => {
     fetchPosts();
+    console.log("items");
   }, []);
 
   const fetchPosts = async () => {
@@ -36,16 +30,20 @@ const Home: React.FC = () => {
     navigation.navigate("Register");
   };
 
+  const goToEdit = (id: number) => {
+    navigation.navigate("Edit", { id });
+  };
+
   return (
     <Layout>
       <Container>
         <ContainerButton>
-          <Button title="Adicionar Postagem" onPress={goToRegister} />
+          <Button title="Novo Post" onPress={goToRegister} />
         </ContainerButton>
       </Container>
       <FlatList
         data={posts}
-        renderItem={(item) => <List data={item} />}
+        renderItem={(item) => <List data={item} onClickEdit={goToEdit} />}
         keyExtractor={(item) => item.id.toString()}
       />
     </Layout>
