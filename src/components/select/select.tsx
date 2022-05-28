@@ -22,7 +22,7 @@ const Select: React.FC<ISelect> = ({
   value,
 }) => {
   const [open, setOpen] = useState(false);
-  const [componentValue, setComponentValue] = useState<string | null>(null);
+  const [componentValue, setComponentValue] = useState<string | null>(value);
 
   const renderListEmpty = () => {
     return (

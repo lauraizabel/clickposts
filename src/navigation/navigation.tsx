@@ -2,9 +2,9 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 
-import Home from "../view/home/home";
-import Register from "../view/register/register";
-import Edit from "../view/edit/edit";
+import Home from "../view/post/home/home";
+import Register from "../view/post/register/register";
+import Edit from "../view/post/edit/edit";
 
 const Stack = createNativeStackNavigator();
 

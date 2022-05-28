@@ -6,3 +6,8 @@ export const getUsers = async () => {
   const response: AxiosResponse<User[]> = await api.get("/users");
   return response.data;
 };
+
+export const getUserById = async (id: number) => {
+  const response: AxiosResponse<User> = await api.get(`/users/${id}`);
+  return response.data;
+};

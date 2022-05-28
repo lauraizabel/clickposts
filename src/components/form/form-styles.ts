@@ -6,16 +6,6 @@ export const Container = styled.View`
   height: 92%;
 `;
 
-export const Title = styled.Text`
-  font-size: 20px;
-  color: ${({ theme }) => theme.colors.black};
-  font-weight: bold;
-  align-self: center;
-  margin-top: 30px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-`;
-
 export const FormContent = styled.View`
   width: 90%;
 `;
