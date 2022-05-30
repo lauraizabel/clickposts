@@ -5,7 +5,7 @@ import { Container, Title } from "./header-styles";
 const Header: React.FC = () => {
   return (
     <Container>
-      <Title>ClickPosts</Title>
+      <Title>Click Posts</Title>
     </Container>
   );
 };

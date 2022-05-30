@@ -7,6 +7,11 @@ export default {
     lightPurple: "#4B3A8C",
     darkBlue: "#21038C",
     danger: "#FF0000",
+    raisingBlack: "#1E1A1D",
+    liverChestnut: "#8C705F",
+    tuscanRed: "#7F534B",
+    nyanza: "#E5F2C9",
+    darkPurple: "#1F0318",
   },
   fonts: {
     regular: "Roboto_400Regular",
