@@ -3,12 +3,14 @@ import theme from "../../theme";
 
 interface IButton {
   color: string;
+  height: number | string;
+  width: number | string;
 }
 
 export const Button = styled.TouchableOpacity<IButton>`
   background-color: ${({ color }) => color};
-  width: 90%;
-  height: 60px;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   border-radius: 10px;
   justify-content: center;
   align-items: center;

@@ -19,11 +19,11 @@ export const Input = styled.TextInput`
   font-weight: bold;
   align-self: center;
   margin-top: 12px;
-  background-color: ${({ theme }) => theme.colors.lightGreen};
+  background-color: ${({ theme }) => theme.colors.nyanza};
   width: 100%;
   height: 48px;
   padding: 12px;
-  border: 1px solid ${({ theme }) => theme.colors.darkGreen};
-  border-radius: 8px;
+  border: 0.2px solid ${({ theme }) => theme.colors.lightGreen};
+  border-radius: 6px;
   opacity: 0.8;
 `;

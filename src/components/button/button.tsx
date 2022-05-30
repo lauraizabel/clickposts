@@ -1,25 +1,38 @@
 import React from "react";
-import { Platform, View } from "react-native";
+
 import theme from "../../theme";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { Button as ButtonComponent, Text } from "./button-styles";
 
 interface IButton {
-  title: string;
+  title?: string;
   onPress?: () => void;
   type?: "default" | "danger" | "success";
+  height?: number | string;
+  width?: number | string;
 }
 
-const Button: React.FC<IButton> = ({ type = "default", onPress, title }) => {
+const Button: React.FC<IButton> = ({
+  type = "default",
+  onPress,
+  title = "",
+  children,
+  height = "60px",
+  width = "100%",
+}) => {
   const colors = {
-    default: theme.colors.lightPurple,
+    default: theme.colors.tuscanRed,
     danger: theme.colors.danger,
     success: theme.colors.darkGreen,
   };
 
   return (
-    <ButtonComponent onPress={onPress} color={colors[type]}>
-      <Text>{title}</Text>
+    <ButtonComponent
+      onPress={onPress}
+      color={colors[type]}
+      height={height}
+      width={width}
+    >
+      {children ? children : <Text>{title}</Text>}
     </ButtonComponent>
   );
 };

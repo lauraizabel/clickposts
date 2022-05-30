@@ -6,17 +6,23 @@ interface ITextField {
   label: string;
   onChangeText?: (text: string) => void;
   initialValue?: string;
+  placeholder?: string;
 }
 
 const TextField: React.FC<ITextField> = ({
   label,
   onChangeText,
   initialValue,
+  placeholder = "",
 }) => {
   return (
     <Container>
-      <Label>{label}</Label>
-      <Input onChangeText={onChangeText} defaultValue={initialValue} />
+      {label && <Label>{label}</Label>}
+      <Input
+        onChangeText={onChangeText}
+        placeholder={placeholder}
+        defaultValue={initialValue}
+      />
     </Container>
   );
 };
