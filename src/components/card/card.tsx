@@ -1,9 +1,14 @@
 import React from "react";
 import { Alert, ListRenderItemInfo } from "react-native";
+import FaIcons from "react-native-vector-icons/FontAwesome";
+
 import { Post } from "../../@types/Posts";
 import { deletePost } from "../../api/posts/posts.api";
+
 import Button from "../button/button";
 import Divider from "../divider/divider";
+
+import theme from "../../theme";
 
 import {
   Container,
@@ -12,6 +17,7 @@ import {
   Content,
   Texts,
   Buttons,
+  ButtonContainer,
 } from "./card-styles";
 
 interface IList {
@@ -48,11 +54,17 @@ const List: React.FC<IList> = ({ data, onClickEdit, onClickShow }) => {
           <SubText>{data.item.body}</SubText>
         </Texts>
         <Buttons>
-          <Button
-            title="Editar"
-            onPress={() => onClickEdit(Number(data.item.id))}
-          />
-          <Button title="Excluir" onPress={onCancel} />
+          <ButtonContainer>
+            <Button onPress={() => onClickEdit(Number(data.item.id))}>
+              <FaIcons name="pencil" size={16} color={theme.colors.nyanza} />
+            </Button>
+          </ButtonContainer>
+
+          <ButtonContainer>
+            <Button onPress={onCancel}>
+              <FaIcons name="trash" size={16} color={theme.colors.nyanza} />
+            </Button>
+          </ButtonContainer>
         </Buttons>
       </Content>
       <Divider />

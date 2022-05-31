@@ -94,7 +94,7 @@ const Home: React.FC = () => {
         renderItem={(item) => (
           <List data={item} onClickEdit={goToEdit} onClickShow={goToShow} />
         )}
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={(item) => `${Number(item.id)}${Math.random()}`}
       />
     </Layout>
   );

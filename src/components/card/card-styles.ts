@@ -11,6 +11,7 @@ export const Title = styled.Text`
   font-weight: bold;
   color: ${({ theme }) => theme.colors.darkBlue};
   margin-top: 20px;
+  text-justify: newspaper;
 `;
 
 export const SubText = styled.Text`
@@ -31,4 +32,9 @@ export const Texts = styled.View`
 `;
 export const Buttons = styled.View`
   width: 30%;
+  justify-content: center;
+`;
+
+export const ButtonContainer = styled.View`
+  margin-bottom: 10px;
 `;
