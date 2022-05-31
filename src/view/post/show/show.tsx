@@ -6,7 +6,13 @@ import { ShowPost } from "../../../@types/Posts";
 import { getPostById } from "../../../api/posts/posts.api";
 import { getUserById } from "../../../api/users/users.api";
 
-import { Container, Text, TextUser, Title } from "./show-styles";
+import {
+  Container,
+  Text,
+  TextUser,
+  Title,
+  ContainerTitle,
+} from "./show-styles";
 import Layout from "../../../components/layout/layout";
 import Divider from "../../../components/divider/divider";
 
@@ -46,11 +52,13 @@ const Show: React.FC<IShow> = ({ route }) => {
   return (
     <Layout>
       <Container>
-        <Title>{post?.title}</Title>
+        <ContainerTitle>
+          <Title>{post?.title}</Title>
+          <TextUser onPress={goToShowUser}>{post?.user.name}</TextUser>
+        </ContainerTitle>
         <Divider />
         <Text>{post?.body}</Text>
         <Divider />
-        <TextUser onPress={goToShowUser}>{post?.user.name}</TextUser>
       </Container>
     </Layout>
   );
